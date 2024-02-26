@@ -5,7 +5,8 @@
   "scripts": {
     "build": "rm -rf ./dist && mkdir dist && node scripts/esbuild.mjs && extism-js dist/enhance-ssr.js -i src/enhance-ssr.d.ts -o dist/enhance-ssr.wasm && rm -rf dist/enhance-ssr.js && rm -rf dist/enhance-ssr.js.map",
     "check": "extism call dist/enhance-ssr.wasm ssr --input=\"$(cat test/test.json)\" --wasi",
-    "test": "node --test test/ | tap-arc"
+    "test": "node --test test/ | tap-arc",
+    "create-packages": "node ./scripts/create-packages.mjs"
   },
   "devDependencies": {
     "@extism/extism": "^1.0.2",
